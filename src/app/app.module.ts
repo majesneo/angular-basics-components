@@ -7,17 +7,17 @@ import {PostFormComponent} from './post-form/post-form.component';
 import {PostComponent} from './post/post.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PostFormComponent,
-    PostComponent,
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        PostFormComponent,
+        PostComponent,
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }

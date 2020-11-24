@@ -21,21 +21,21 @@ export class AppComponent implements OnInit {
 
     ngOnInit() {
         setTimeout(() => {
-            console.log('Timeout')
+            console.log('Timeout');
             this.posts[0] = {
                 title: 'changeDetection: ChangeDetectionStrategy.OnPush',
                 text: 'changeDetection: ChangeDetectionStrategy.OnPush',
                 id: 22
-            }
-        }, 5000)
+            };
+        }, 5000);
     }
 
     removePost(id) {
-        console.log(id)
-        this.posts = this.posts.filter(post => post.id !== id)
+        console.log(id);
+        this.posts = this.posts.filter(post => post.id !== id);
     }
 
     updatePosts(post) {
-        this.posts.unshift(post)
+        this.posts.unshift(post);
     }
 }
