@@ -14,7 +14,8 @@ import {
     OnDestroy,
     OnInit,
     Output,
-    SimpleChanges
+    SimpleChanges,
+    ViewEncapsulation
 } from '@angular/core';
 import {Post} from '../app.component';
 
@@ -22,50 +23,51 @@ import {Post} from '../app.component';
     selector: 'app-post',
     templateUrl: './post.component.html',
     styleUrls: ['./post.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None
 })
 export class PostComponent implements OnInit, OnChanges, DoCheck, AfterContentInit,
     AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
     @Input() post: Post;
 
     @ContentChild('info', {static: true}) infoRef: ElementRef;
-    @Output() onRemove = new EventEmitter<number>()
+    @Output() onRemove = new EventEmitter<number>();
 
     removePost() {
-        this.onRemove.emit(this.post.id)
+        this.onRemove.emit(this.post.id);
     }
 
     ngAfterContentChecked() {
-        console.log('ngAfterContentChecked')
+        console.log('ngAfterContentChecked');
     }
 
     ngAfterContentInit() {
-        console.log('ngAfterContentInit')
+        console.log('ngAfterContentInit');
     }
 
     ngDoCheck() {
-        console.log('DoCheck')
+        console.log('DoCheck');
     }
 
     ngOnChanges(changes: SimpleChanges) {
-        console.log('ngOnChanges', changes)
+        console.log('ngOnChanges', changes);
     }
 
     ngOnInit() {
-        console.log('ngOnInit')
+        console.log('ngOnInit');
         // console.log(this.infoRef)
     }
 
     ngAfterViewInit() {
-        console.log("ngAfterViewInit")
+        console.log('ngAfterViewInit');
     }
 
     ngAfterViewChecked() {
-        console.log('ngAfterViewChecked')
+        console.log('ngAfterViewChecked');
     }
 
     ngOnDestroy() {
-        console.log('ngOnDestroy')
+        console.log('ngOnDestroy');
     }
 
 }
